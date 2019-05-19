@@ -221,7 +221,7 @@ render <- function(input,
 
   # setup a cleanup function for intermediate files
   intermediates <- c()
-  on.exit(if (clean) unlink(intermediates, recursive = TRUE), add = TRUE)
+  on.exit(if (clean) unlink(intermediates, recursive = TRUE, force = TRUE), add = TRUE)
 
   # ensure we have a directory to store intermediates
   if (!is.null(intermediates_dir)) {
